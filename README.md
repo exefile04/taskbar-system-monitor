@@ -1,53 +1,53 @@
 # Taskbar System Monitor
 
-A [Windhawk](https://windhawk.net) mod that draws live **CPU, GPU, RAM, disk and network** stats
-**inside the Windows 11 taskbar**.
+A [Windhawk](https://windhawk.net) mod that shows CPU, GPU, RAM, disk and network usage in the empty space on
+the left of your Windows 11 taskbar.
 
-## Features
+![Screenshot](images/screenshot.png)
 
-- **Fully configurable layout** - choose what is shown and where.
-- **Hover** a value for details: busiest apps, free memory, disk read/write, data used today.
-- **Click** opens Task Manager (configurable). **Right-click** opens a small menu.
-- Smooth value animation, optional 60-second sparklines, optional warning colors (off by default).
-- RAM icon fills up with usage. KiB/MiB/GiB or KB/MB/GB, bytes or bits for the network.
-- Follows the taskbar (auto-hide, Start menu, minimising) and works with Taskbar Styler docks.
-- Shows on **every monitor's** taskbar.
-- Dozens of settings: font, size, color, opacity, spacing, icon size, update speed, position and more.
+## What it does
+
+- Shows CPU, GPU, RAM, disk, download and upload with small outline icons. The RAM icon fills up as memory gets used.
+- Hover a value to see more: the apps using the most CPU or memory, disk read/write speed, data used today.
+- Click it to open Task Manager (you can change that). Right-click for a small menu.
+- Works on every monitor that has a taskbar, and hides when a fullscreen app is on top.
+- Most things are settings: layout, font, colors, sizes, units (GiB or GB, bytes or bits), update speed.
 
 ## Install
 
 1. Install [Windhawk](https://windhawk.net).
-2. In Windhawk click **Create a new mod**, delete the sample code, paste the contents of
-   [`taskbar-system-monitor.wh.cpp`](taskbar-system-monitor.wh.cpp), press **Ctrl+B** to compile, then enable the mod.
+2. In Windhawk click **Create a new mod**, delete the sample code and paste in
+   [`taskbar-system-monitor.wh.cpp`](taskbar-system-monitor.wh.cpp).
+3. Press **Ctrl+B** to compile, then turn the mod on.
 
 ## Layout
 
-Columns are separated by `|`, rows inside a column by `,`. Items: `cpu`, `gpu`, `ram`, `disk`, `down`, `up`
-and `-` for an empty slot (up to 3 rows).
+You write the layout as text. Use `|` between columns and `,` between rows. The items are `cpu`, `gpu`, `ram`,
+`disk`, `down` and `up`. Use `-` for an empty spot. Up to 3 rows.
 
-| Layout | Result |
+| Layout | What you get |
 |---|---|
-| `cpu,gpu\|ram,disk\|down,up` | default: three columns, two rows |
-| `cpu\|ram\|down` | a single row |
-| `cpu,ram,disk\|down,up` | three rows |
+| `cpu,gpu\|ram,disk\|down,up` | the default: 3 columns, 2 rows |
+| `cpu\|ram\|down` | one row |
+| `cpu,ram,disk\|down,up` | 3 rows |
 
-## About temperatures
+## Temperatures
 
-Windows does not give normal programs real CPU or most GPU temperatures.
+Windows doesn't let normal programs read the CPU temperature.
 
-- **NVIDIA GPUs** work out of the box.
-- For accurate **CPU / AMD / Intel GPU** temperatures run
-  [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) as administrator
-  (it can stay minimised in the tray). The mod picks up its data automatically.
-- Without it, the CPU value comes from Windows' ACPI thermal zone, which is only approximate and missing on some
-  PCs. An integrated GPU can show the CPU/APU temperature (they share one die); this can be turned off.
+- **GPU:** read from the graphics driver, the same way Task Manager does it. Most NVIDIA, AMD and Intel drivers support it.
+- **CPU:** install [LibreHardwareMonitor](https://github.com/LibreHardwareMonitor/LibreHardwareMonitor) and run it
+  as administrator (it can sit in the tray). The mod picks it up on its own.
+- Without that, the CPU number comes from a Windows sensor that is only a rough guess, and some PCs don't have it.
+- If your GPU is built into the CPU and has no sensor, the mod can show the CPU temperature for it. You can turn that off.
 
-## Notes
+## Good to know
 
-- The position is found automatically by measuring the first taskbar icon. With a Taskbar Styler dock, set
-  *dock margin* to the dock's margin so the monitor stays put when icons are added.
-- The mod runs only in `explorer.exe`, draws its own windows and does not hook any functions.
-- "Data used today" is stored in the mod's local storage and survives restarts.
+- There has to be free space to the left of the first taskbar icon. If you use a Taskbar Styler dock, put the
+  dock's margin in the "dock margin" setting so the monitor stays in place.
+- While a taskbar hover preview or a flyout (like the keyboard language menu) is open, Windows draws it over the
+  monitor, so the monitor disappears for a moment.
+- It only runs inside explorer.exe and doesn't hook any functions.
 
 ## License
 
