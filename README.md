@@ -1,7 +1,7 @@
 # Taskbar System Monitor
 
 A [Windhawk](https://windhawk.net) mod that draws live **CPU, GPU, RAM, disk and network** stats
-**inside the Windows 11 taskbar**, left of the first icon, with clean outline icons.
+**inside the Windows 11 taskbar**.
 
 ## Features
 
