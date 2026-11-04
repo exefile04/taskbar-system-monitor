@@ -1,7 +1,7 @@
 // ==WindhawkMod==
 // @id              taskbar-system-monitor
 // @name            Taskbar System Monitor
-// @description     Fully customizable CPU / GPU / RAM / disk / network monitor with 2D icons, tooltips and sparklines, drawn inside the Windows 11 taskbar (all monitors)
+// @description     Customizable CPU / GPU / RAM / disk / network monitor
 // @version         1.0.0
 // @author          exefile04
 // @github          https://github.com/exefile04
@@ -17,9 +17,9 @@
 
 ![Screenshot](https://raw.githubusercontent.com/exefile04/taskbar-system-monitor/main/images/screenshot.png)
 
-Shows CPU, GPU, RAM, disk and network on your taskbar, left of the icons. Works with Taskbar Styler docks too.
+Shows CPU, GPU, RAM, disk and network on your taskbar. Works with Taskbar Styler.
 
-Hover a number for more info. Click to open Task Manager, right-click for a menu. Pretty much everything can be changed in the settings.
+Hover a number for more info. Click to open Task Manager.
 
 ## Layout
 Write it as text: `|` between columns, `,` between rows. Items are `cpu`, `gpu`, `ram`, `disk`, `down`, `up`, and `-` for an empty spot.
@@ -36,7 +36,7 @@ GPU temp comes from the driver. For CPU temp, run [LibreHardwareMonitor](https:/
 If your GPU is built into the CPU and has no sensor, it shows the CPU temp instead. You can turn that off.
 
 ## Similar mods
-Taskbar System Info and Taskbar Network Speed Indicator show some of this too. I wanted everything in one small block, with icons, hover details and my own layout.
+Taskbar System Info and Taskbar Network Speed Indicator show some of this too. I wanted everything in one small block, hover details and my own layout.
 
 ## Notes
 If there's no room left of the icons, it moves next to the tray. If there's no room there either, it hides.
