@@ -43,10 +43,9 @@ Windows doesn't let normal programs read the CPU temperature.
 
 ## Good to know
 
-- There has to be free space to the left of the first taskbar icon. If you use a Taskbar Styler dock, put the
-  dock's margin in the "dock margin" setting so the monitor stays in place.
-- While a taskbar hover preview or a flyout (like the keyboard language menu) is open, Windows draws it over the
-  monitor, so the monitor disappears for a moment.
+- It measures the visible taskbar and sticks to it, so a Taskbar Styler dock or a different taskbar size needs no setup.
+- It sits left of the icons. If there's no space there (a left-aligned taskbar, for example), it moves to the gap
+  before the tray. If there's no space at all, it hides.
 - It only runs inside explorer.exe and doesn't hook any functions.
 
 ## License
