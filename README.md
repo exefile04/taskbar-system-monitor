@@ -1,10 +1,8 @@
 # Taskbar System Monitor
 
-A [Windhawk](https://windhawk.net) mod that shows CPU, GPU, RAM, disk and network on your Windows 11 taskbar, left of the icons. Works with Taskbar Styler docks too.
+A [Windhawk](https://windhawk.net) mod that shows CPU, GPU, RAM, disk and network on your Windows 11 taskbar.
 
 ![Screenshot](images/screenshot.png)
-
-Hover a number for more info. Click to open Task Manager, right-click for a menu. Pretty much everything can be changed in the settings.
 
 ## Install
 In Windhawk, click **Create a new mod**, replace the code with [`taskbar-system-monitor.wh.cpp`](taskbar-system-monitor.wh.cpp), press **Ctrl+B**, then turn it on.
